@@ -1,0 +1,27 @@
+<% content_for :left do %>
+	<h1>Listing Users</h1>
+	<% if @users %>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= user.first_name %></td>
+				<td><%= user.last_name %></td>
+				<td><%= user.email_address %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<% end %>
+	<a href="/users/new"><h3>New User</h3></a>
+<% end %>
+<% content_for :right do %>
+	<p>(This is the right column)</p>
+<% end %>
