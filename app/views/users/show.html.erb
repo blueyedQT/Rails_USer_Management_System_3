@@ -1,0 +1,9 @@
+<% content_for :left do %>
+<p>First Name: <%= @user.first_name %></p>
+<p>First Name: <%= @user.last_name %></p>
+<p>First Name: <%= @user.email_address %></p>
+<a href="users/<%= @user.id %>/edit">Edit</a> | <a href="/users">Back</a>
+<% end %>
+<% content_for :right do %>
+<p>(This is the right side)</p>
+<% end %>

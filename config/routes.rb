@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   post 'users/create'
 
+  get 'users/:id' => 'users#show'
+
   get 'posts/index'
 
   get 'posts/new'

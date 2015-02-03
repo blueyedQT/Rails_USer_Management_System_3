@@ -18,4 +18,9 @@ class UsersController < ApplicationController
 			redirect_to '/users/new'
 		end
 	end
+
+	def show
+		@user = User.find(params[:id])
+		puts @user
+	end
 end
