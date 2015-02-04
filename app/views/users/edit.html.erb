@@ -1,0 +1,32 @@
+<% content_for :left do %>
+<h1>Editing User</h1>
+<% if @errors %>
+	<% @errors.each do |error| %>
+	<p class="alert-danger"><%= error %></p>
+	<% end %>
+<% end %>
+<form action="/users/<%= @user.id %>" method="post">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<div class="form-group">
+		<label for="first_name">First Name</label>
+		<input type="text" class="form-control" name="first_name" value="<%= @user.first_name %>">
+	</div>
+	<div class="form-group">
+		<label for="last_name">Last Name</label>
+		<input type="text" class="form-control" name="last_name" value="<%= @user.last_name %>">
+	</div>
+	<div class="form-group">
+		<label for="email_address">Email</label>
+		<input type="text" class="form-control" name="email_address" value="<%= @user.email_address %>">
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" class="form-control" name="password" value="Password">
+	</div>
+	<button type="submit" class="btn btn default">Submit</button>
+</form>
+<a href="/users"><h3>Back</h3></a>
+<% end %>
+<% content_for :right do %>
+<p>(This is the right side)</p>
+<% end %>

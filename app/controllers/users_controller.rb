@@ -23,4 +23,13 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		puts @user
 	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id]).update( first_name: params[:first_name], last_name: params[:last_name], email_address: params[:email_address], password: params[:password] )
+		redirect_to '/users/'+params[:id]
+	end
 end
