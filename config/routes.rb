@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   get 'users/:id/edit'=> 'users#edit'
 
-  post 'users/:id' => 'users#update'
+  put 'users/:id' => 'users#update'
+
+  delete 'users/:id' => 'users#destroy'
 
   get 'posts/index'
 

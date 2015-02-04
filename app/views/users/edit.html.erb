@@ -6,6 +6,7 @@
 	<% end %>
 <% end %>
 <form action="/users/<%= @user.id %>" method="post">
+	<input type="hidden" name="_method" value="put">
 	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 	<div class="form-group">
 		<label for="first_name">First Name</label>

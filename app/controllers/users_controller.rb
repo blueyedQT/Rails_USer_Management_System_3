@@ -32,4 +32,9 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id]).update( first_name: params[:first_name], last_name: params[:last_name], email_address: params[:email_address], password: params[:password] )
 		redirect_to '/users/'+params[:id]
 	end
+
+	def destroy
+		@destroy = User.find(params[:id]).destroy
+		redirect_to '/users/'
+	end
 end
